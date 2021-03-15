@@ -13,10 +13,11 @@ function App() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [dispatch]);
-
+  useEffect(() => {  //useEffect wywoluje sie pierwszy raz przy inicjalizacji apki
+    //console.log(dispatch) widac co robi dispatch jak dostanie funkcje na wejscie
+    dispatch(getPosts()); // dispatch jesli dostanie funkcje to ja wywoluje przekazujac jako parametry funkcje dispatch i getState
+  }, [/*dispatch*/]);
+ 
   return (
     <Container maxwidth="lg">
         <AppBar className={classes.appBar} position="static" color="inherit">
