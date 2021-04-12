@@ -32,6 +32,8 @@ const Auth = () => {
         e.preventDefault();
         
         if(isSignup) {
+            console.log(initialState);
+            console.log(formData);
             dispatch(signup(formData, history));
         } else {
             dispatch(signin(formData, history));
@@ -39,8 +41,7 @@ const Auth = () => {
     };
 
     const handleChange = (e) => {
-        console.log(history)
-        setFormData({ ...formData, [e.target.name]: [e.target.value]})
+        setFormData({ ...formData, [e.target.name]: e.target.value})
     };
 
     const switchMode = () => setIsSignup((prevIsSignup) => !prevIsSignup);
